@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>Ng Movie</title>
   </head>
   <body>
+    <div ng-view></div>
+
     <script type="text/javascript" src="/node_modules/angular/angular.js">
+    </script>
+    <script src="/node_modules/angular-route/angular-route.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/build/service/movie-service.js">
+    </script>
+    <script type="text/javascript" src="/build/movie/movie-list-controller.js">
     </script>
     <script type="text/javascript" src="/build/app.module.js">
     </script>

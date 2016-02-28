@@ -7,7 +7,7 @@ describe("MovieService", () => {
     let service: MovieService;
     let $httpBackend: angular.IHttpBackendService;
 
-    beforeEach(() => module("app"));
+    beforeEach(() => module("app.service"));
 
     beforeEach(inject((movieService, _$httpBackend_) => {
         service = movieService;

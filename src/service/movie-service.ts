@@ -17,4 +17,4 @@ class MovieService {
     }
 }
 
-angular.module("app").service("movieService", MovieService);
+angular.module("app.service", []).service("movieService", MovieService);

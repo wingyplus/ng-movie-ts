@@ -1,0 +1,18 @@
+<div>
+  <input name="keyword" type="text">
+  <button ng-click="movieListCtrl.search('batman')">Search</button>
+</div>
+<div>
+  <table>
+    <tbody>
+      <tr ng-repeat="movie in movieListCtrl.movies">
+        <td><img ng-src="{{ movie.poster }}" /></td>
+        <td>
+          <p ng-bind="movie.title"></p>
+          <p ng-bind="movie.year"></p>
+          <button type="button">Add to wishlist</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
