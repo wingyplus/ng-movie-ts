@@ -101,8 +101,9 @@ describe("MovieService", () => {
         $httpBackend.expectGET("http://www.omdbapi.com/?s=Batman&page=2");
 
         service.search("batman").then((movies) => {
-            console.log(movies);
-            expect(movies[0].Title).toEqual("Batman: The Movie");
+            expect(movies[0].title).toEqual("Batman: The Movie");
+            expect(movies[0].year).toEqual("1966");
+            expect(movies[0].poster).toEqual("http://ia.media-imdb.com/images/M/MV5BMTkzODAyMjg2Ml5BMl5BanBnXkFtZTgwMzI4NzM1MjE@._V1_SX300.jpg");
         });
 
         $httpBackend.flush();
@@ -112,8 +113,9 @@ describe("MovieService", () => {
         $httpBackend.expectGET("http://www.omdbapi.com/?s=Batman&page=2");
 
         service.search("batman").then((movies) => {
-            console.log(movies);
-            expect(movies[1].Title).toEqual("Batman: Gotham Knight");
+            expect(movies[1].title).toEqual("Batman: Gotham Knight");
+            expect(movies[1].year).toEqual("2008");
+            expect(movies[1].poster).toEqual("http://ia.media-imdb.com/images/M/MV5BMTQ1NjExODcyNl5BMl5BanBnXkFtZTcwMTk0MDc4MQ@@._V1_SX300.jpg");
         });
 
         $httpBackend.flush();

@@ -2,7 +2,7 @@
 
 
 class Movie {
-    constructor(public title: string) { }
+    constructor(public title: string, public year: string, public poster: string) { }
 }
 
 class MovieService {
@@ -12,8 +12,7 @@ class MovieService {
 
     search(title: string): any {
         return this.$http.get("http://www.omdbapi.com/?s=Batman&page=2").then((response: any) => {
-            console.log(response.data);
-            return response.data.Search
+            return response.data.Search.map((movie) => new Movie(movie.Title, movie.Year, movie.Poster));
         });
     }
 }
